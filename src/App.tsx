@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+import EmailCrainSecondPivot from './EmailCrainSecondPivot';
 import Defs from './Defs';
 import EmailCrainFirstPivot from './EmailCrainFirstPivot';
 import EmailCrainBase from './EmailCrainBase';
@@ -27,7 +28,18 @@ function App() {
             ease: 'easeInOut',
             loop: Infinity,
           }}
-        />
+        >
+          <EmailCrainSecondPivot
+            animate={{
+              rotate: [-40, 35, -40],
+            }}
+            transition={{
+              duration: 5,
+              ease: 'easeInOut',
+              loop: Infinity,
+            }}
+          />
+        </EmailCrainFirstPivot>
       </g>
 
 
