@@ -5,11 +5,13 @@ import Defs from './Defs';
 
 import AnalyticsCarinBase from './AnalyticsCrainBase';
 import AnalyticsCrainFirstPivot from './AnalyticsCrainFirstPivot';
+import AnalyticsCrainSecondPivot from './AnalyticsCrainSecondPivot';
 
 import EmailCrainBase from './EmailCrainBase';
 import EmailCrainFirstPivot from './EmailCrainFirstPivot';
 import EmailCrainSecondPivot from './EmailCrainSecondPivot';
 import Envelope from './Envelope';
+
 
 function App() {
   return (
@@ -54,14 +56,25 @@ function App() {
         <AnalyticsCarinBase />
         <AnalyticsCrainFirstPivot
           animate={{
-            rotate: [0, 45, 0],
+            // rotate: [0, 45, 0],
           }}
           transition={{
             duration: 5,
             ease: 'easeInOut',
             loop: Infinity,
           }}
-        />
+        >
+          <AnalyticsCrainSecondPivot
+            animate={{
+              rotate: [0, -60, 0],
+            }}
+            transition={{
+              duration: 5,
+              ease: 'easeInOut',
+              loop: Infinity,
+            }}
+          />
+        </AnalyticsCrainFirstPivot>
       </g>
       <g id="Top-trail">
         <rect
