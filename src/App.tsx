@@ -6,11 +6,13 @@ import Defs from './Defs';
 import SideRail from './SideRail';
 import TopRail from './TopRail';
 
+import AnalyticsCrain from './AnalyticsCrain';
 import AnalyticsCarinBase from './AnalyticsCrainBase';
 import AnalyticsCrainFirstPivot from './AnalyticsCrainFirstPivot';
 import AnalyticsCrainSecondPivot from './AnalyticsCrainSecondPivot';
 import AnalyticsCrainThirdPivot from './AnalyticsCrainThirdPivot';
 
+import EmailCrain from './EmailCrain';
 import EmailCrainBase from './EmailCrainBase';
 import EmailCrainFirstPivot from './EmailCrainFirstPivot';
 import EmailCrainSecondPivot from './EmailCrainSecondPivot';
@@ -28,69 +30,95 @@ function App() {
       viewBox="0 0 350.77 277.99"
     >
       <Defs />
-      <g id="Email">
+      <EmailCrain
+        animate={{
+          y: [-60, 70],
+        }}
+        transition={{
+          duration: 4.5,
+          ease: 'easeOut',
+          yoyo: Infinity,
+
+
+        }}
+      >
         <EmailCrainBase />
         <EmailCrainFirstPivot
           animate={{
-            rotate: [40, -30, 40],
+            rotate: [40, -30],
           }}
           transition={{
-            duration: 5,
+            duration: 4.5,
             ease: 'easeInOut',
-            loop: Infinity,
+            yoyo: Infinity,
+
           }}
         >
           <EmailCrainSecondPivot
             animate={{
-              rotate: [-40, 35, -40],
+              rotate: [-40, 35],
             }}
             transition={{
-              duration: 5,
+              duration: 4.5,
               ease: 'easeInOut',
-              loop: Infinity,
+              yoyo: Infinity,
+
             }}
           >
             <Envelope />
           </EmailCrainSecondPivot>
         </EmailCrainFirstPivot>
-      </g>
+      </EmailCrain>
 
 
-      <g id="Analytics">
+      <AnalyticsCrain
+        animate={{
+          x: [-5, 180],
+        }}
+        transition={{
+          duration: 4.5,
+          ease: 'easeInOut',
+          yoyo: Infinity,
+
+        }}
+      >
         <AnalyticsCarinBase />
         <AnalyticsCrainFirstPivot
           animate={{
-            rotate: [0, 45, 0],
+            rotate: [0, 45],
           }}
           transition={{
-            duration: 5,
-            ease: 'easeInOut',
-            loop: Infinity,
+            duration: 4.5,
+            ease: 'easeOut',
+            yoyo: Infinity,
+
           }}
         >
           <AnalyticsCrainSecondPivot
             animate={{
-              rotate: [0, -60, 0],
+              rotate: [0, -60],
             }}
             transition={{
-              duration: 5,
+              duration: 4.5,
               ease: 'easeInOut',
-              loop: Infinity,
+              yoyo: Infinity,
+
             }}
           >
             <AnalyticsCrainThirdPivot
               animate={{
-                rotate: [0, 50, 0],
+                rotate: [0, 50],
               }}
               transition={{
-                duration: 5,
+                duration: 4.5,
                 ease: 'easeInOut',
-                loop: Infinity,
+                yoyo: Infinity,
+
               }}
             />
           </AnalyticsCrainSecondPivot>
         </AnalyticsCrainFirstPivot>
-      </g>
+      </AnalyticsCrain>
       <TopRail />
       <SideRail />
     </svg>
