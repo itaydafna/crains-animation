@@ -9,6 +9,7 @@ import TopRail from './TopRail';
 import AnalyticsCarinBase from './AnalyticsCrainBase';
 import AnalyticsCrainFirstPivot from './AnalyticsCrainFirstPivot';
 import AnalyticsCrainSecondPivot from './AnalyticsCrainSecondPivot';
+import AnalyticsCrainThirdPivot from './AnalyticsCrainThirdPivot';
 
 import EmailCrainBase from './EmailCrainBase';
 import EmailCrainFirstPivot from './EmailCrainFirstPivot';
@@ -31,7 +32,7 @@ function App() {
         <EmailCrainBase />
         <EmailCrainFirstPivot
           animate={{
-            // rotate: [40, -30, 40],
+            rotate: [40, -30, 40],
           }}
           transition={{
             duration: 5,
@@ -41,7 +42,7 @@ function App() {
         >
           <EmailCrainSecondPivot
             animate={{
-              // rotate: [-40, 35, -40],
+              rotate: [-40, 35, -40],
             }}
             transition={{
               duration: 5,
@@ -59,7 +60,7 @@ function App() {
         <AnalyticsCarinBase />
         <AnalyticsCrainFirstPivot
           animate={{
-            // rotate: [0, 45, 0],
+            rotate: [0, 45, 0],
           }}
           transition={{
             duration: 5,
@@ -69,14 +70,25 @@ function App() {
         >
           <AnalyticsCrainSecondPivot
             animate={{
-              // rotate: [0, -60, 0],
+              rotate: [0, -60, 0],
             }}
             transition={{
               duration: 5,
               ease: 'easeInOut',
               loop: Infinity,
             }}
-          />
+          >
+            <AnalyticsCrainThirdPivot
+              animate={{
+                rotate: [0, 50, 0],
+              }}
+              transition={{
+                duration: 5,
+                ease: 'easeInOut',
+                loop: Infinity,
+              }}
+            />
+          </AnalyticsCrainSecondPivot>
         </AnalyticsCrainFirstPivot>
       </g>
       <TopRail />
