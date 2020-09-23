@@ -5,13 +5,11 @@ import Defs from './layers/Defs';
 import SideRail from './layers/SideRail';
 import TopRail from './layers/TopRail';
 
-import AnalyticsCrain from './layers/AnalyticsCrain';
 import AnalyticsCarinBase from './layers/AnalyticsCrainBase';
 import AnalyticsCrainFirstPivot from './layers/AnalyticsCrainFirstPivot';
 import AnalyticsCrainSecondPivot from './layers/AnalyticsCrainSecondPivot';
 import AnalyticsCrainThirdPivot from './layers/AnalyticsCrainThirdPivot';
 
-import EmailCrain from './layers/EmailCrain';
 import EmailCrainBase from './layers/EmailCrainBase';
 import EmailCrainFirstPivot from './layers/EmailCrainFirstPivot';
 import EmailCrainSecondPivot from './layers/EmailCrainSecondPivot';
@@ -30,8 +28,9 @@ const ProcessingMCAnimation = ()=>(
     viewBox="0 0 350.77 277.99"
   >
     <Defs />
-    
-    <EmailCrain
+
+    <AnimatedLayerWrapper
+      id="email-crain"
       animate={{
         y: [-60, 70],
       }}
@@ -39,12 +38,12 @@ const ProcessingMCAnimation = ()=>(
         duration: 4.5,
         ease: 'easeOut',
         yoyo: Infinity,
-
-
       }}
     >
       <EmailCrainBase />
-      <EmailCrainFirstPivot
+      <AnimatedLayerWrapper
+        id="email-crain-first-pivot"
+        transformOrigin="78% 56%"
         animate={{
           rotate: [40, -30],
         }}
@@ -55,24 +54,31 @@ const ProcessingMCAnimation = ()=>(
 
         }}
       >
-        <EmailCrainSecondPivot
-          animate={{
-            rotate: [-40, 35],
-          }}
-          transition={{
-            duration: 4.5,
-            ease: 'easeInOut',
-            yoyo: Infinity,
+        <EmailCrainFirstPivot>
+          <AnimatedLayerWrapper
+            id="email-crain-second-pivot"
+            transformOrigin="73.4% 67.1%"
+            animate={{
+              rotate: [-40, 35],
+            }}
+            transition={{
+              duration: 4.5,
+              ease: 'easeInOut',
+              yoyo: Infinity,
 
-          }}
-        >
-          <Envelope />
-        </EmailCrainSecondPivot>
-      </EmailCrainFirstPivot>
-    </EmailCrain>
+            }}
+          >
+            <EmailCrainSecondPivot>
+              <Envelope />
+            </EmailCrainSecondPivot>
+          </AnimatedLayerWrapper>
+        </EmailCrainFirstPivot>
+      </AnimatedLayerWrapper>
+    </AnimatedLayerWrapper>
 
 
-    <AnalyticsCrain
+    <AnimatedLayerWrapper
+      id="analytics-crain"
       animate={{
         x: [-5, 180],
       }}
@@ -84,7 +90,9 @@ const ProcessingMCAnimation = ()=>(
       }}
     >
       <AnalyticsCarinBase />
-      <AnalyticsCrainFirstPivot
+      <AnimatedLayerWrapper
+        id="analytics-crain-first-pivot"
+        transformOrigin="24.8% 28.6%"
         animate={{
           rotate: [0, 45],
         }}
@@ -95,20 +103,12 @@ const ProcessingMCAnimation = ()=>(
 
         }}
       >
-        <AnalyticsCrainSecondPivot
-          animate={{
-            rotate: [0, -60],
-          }}
-          transition={{
-            duration: 4.5,
-            ease: 'easeInOut',
-            yoyo: Infinity,
-
-          }}
-        >
-          <AnalyticsCrainThirdPivot
+        <AnalyticsCrainFirstPivot>
+          <AnimatedLayerWrapper
+            id="analytics-crain-second-pivot"
+            transformOrigin="16.99% 38.56%"
             animate={{
-              rotate: [0, 50],
+              rotate: [0, -60],
             }}
             transition={{
               duration: 4.5,
@@ -116,10 +116,28 @@ const ProcessingMCAnimation = ()=>(
               yoyo: Infinity,
 
             }}
-          />
-        </AnalyticsCrainSecondPivot>
-      </AnalyticsCrainFirstPivot>
-    </AnalyticsCrain>
+          >
+            <AnalyticsCrainSecondPivot>
+              <AnimatedLayerWrapper
+                id="analytics-crain-third-pivot"
+                transformOrigin="24.2% 45.9%"
+                animate={{
+                  rotate: [0, 50],
+                }}
+                transition={{
+                  duration: 4.5,
+                  ease: 'easeInOut',
+                  yoyo: Infinity,
+
+                }}
+              >
+                <AnalyticsCrainThirdPivot />
+              </AnimatedLayerWrapper>
+            </AnalyticsCrainSecondPivot>
+          </AnimatedLayerWrapper>
+        </AnalyticsCrainFirstPivot>
+      </AnimatedLayerWrapper>
+    </AnimatedLayerWrapper>
     <TopRail />
     <SideRail />
   </svg>

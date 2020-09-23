@@ -1,17 +1,12 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
-import { motion, AnimationProps, Transition } from 'framer-motion';
 
 interface Props {
-  animate?: AnimationProps['animate'],
-  transition?: Transition,
-  children?: ReactNode
+  children: ReactNode
 }
 
-const EmailCrainSecondPivot = ({ animate,
-  transition,
+const EmailCrainSecondPivot = ({
   children }:Props)=> (
-    <Container id="email-crain-2nd-pivot" animate={animate} transition={transition}>
+    <>
       <polyline
         id="Fill-281"
         points="257.36 182.7 237.65 159.37 234.98 161.67 254.34 188.66 257.36 182.7"
@@ -94,13 +89,10 @@ const EmailCrainSecondPivot = ({ animate,
           />
         </g>
       </g>
-    </Container>
+    </>
 );
 
 
-const Container = styled(motion.g)`
-  transform-origin: 73.4% 67.1% !important;
-`;
 
 
 export default EmailCrainSecondPivot;

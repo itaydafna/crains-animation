@@ -1,16 +1,12 @@
 import React, { ReactNode } from  'react';
 
-import styled from 'styled-components';
-import { AnimationProps, motion, Transition } from 'framer-motion';
 
 interface Props {
-  animate?: AnimationProps['animate'],
-  transition?: Transition,
   children?: ReactNode
 }
 
-const AnalyticsCrainSecondPivot = ({ animate, transition, children  }:Props)=> (
-  <Container id="analytics-crain-2nd-pivot" animate={animate} transition={transition}>
+const AnalyticsCrainSecondPivot = ({  children  }:Props)=> (
+  <>
     <polyline
       id="Fill-281-2"
       data-name="Fill-281"
@@ -33,12 +29,9 @@ const AnalyticsCrainSecondPivot = ({ animate, transition, children  }:Props)=> (
       fill="url(#linear-gradient-10)"
     />
     {children}
-  </Container>
+  </>
 );
 
 
-const Container = styled(motion.g)`
-  transform-origin: 16.99% 38.56% !important;
-`;
 
 export default AnalyticsCrainSecondPivot;

@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import { AnimationProps, motion, Transition } from 'framer-motion';
 
 interface Props {
-  animate?: AnimationProps['animate'],
-  transition?: Transition,
-  children?: ReactNode
+  children: ReactNode
 }
 
-const AnalyticsCrainFirstPivot = ({ animate, transition, children  }:Props)=>(
-  <Container animate={animate} transition={transition} id="analytics-crain-1st-pivot">
+const AnalyticsCrainFirstPivot = ({ children  }:Props)=>(
+  <>
     <polyline
       id="Fill-283-2"
       data-name="Fill-283"
@@ -32,11 +30,8 @@ const AnalyticsCrainFirstPivot = ({ animate, transition, children  }:Props)=>(
       fill="url(#linear-gradient-9)"
     />
     {children}
-  </Container>
+  </>
 );
 
-const Container = styled(motion.g)`
-  transform-origin: 24.8% 28.6% !important;
-`;
 
 export default AnalyticsCrainFirstPivot;

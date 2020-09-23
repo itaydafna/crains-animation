@@ -1,16 +1,7 @@
-import React, { ReactNode } from  'react';
+import React from  'react';
 
-import styled from 'styled-components';
-import { AnimationProps, motion, Transition } from 'framer-motion';
-
-interface Props {
-  animate?: AnimationProps['animate'],
-  transition?: Transition,
-  children?: ReactNode
-}
-
-const AnalyticsCrainThirdPivot = ({ animate, transition, children  }:Props)=> (
-  <Container id="analytics-crain-3rd-pivot" animate={animate} transition={transition}>
+const AnalyticsCrainThirdPivot = ()=> (
+  <>
     <polygon
       id="Fill-280-2"
       data-name="Fill-280"
@@ -95,12 +86,9 @@ const AnalyticsCrainThirdPivot = ({ animate, transition, children  }:Props)=> (
         fill="url(#linear-gradient-12)"
       />
     </g>
-  </Container>
+  </>
 );
 
 
-const Container = styled(motion.g)`
-  transform-origin: 24.2% 45.9% !important;
-`;
 
 export default AnalyticsCrainThirdPivot;

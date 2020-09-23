@@ -1,19 +1,11 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
-import { motion, AnimationProps, Transition } from 'framer-motion';
 
 interface Props {
-  animate?: AnimationProps['animate'],
-  transition?: Transition,
-  children?: ReactNode
+  children: ReactNode
 }
 
-const EmailCrainFirstPivot = ({ animate, transition, children = null }: Props)=>(
-  <Container
-    id="email-crain-1st-pivot"
-    animate={animate}
-    transition={transition}
-  >
+const EmailCrainFirstPivot = ({ children = null }: Props)=>(
+  <>
     <polyline
       id="Fill-283"
       points="268.04 151.01 254.64 187.28 258.75 188.91 276.64 155.48 268.04 151.01"
@@ -33,12 +25,9 @@ const EmailCrainFirstPivot = ({ animate, transition, children = null }: Props)=>
       fill="url(#linear-gradient-3)"
     />
     {children}
-  </Container>
+  </>
 );
 
-const Container = styled(motion.g)`
-  transform-origin: 78% 56% !important;
-`;
 
 
 export default EmailCrainFirstPivot;
