@@ -1,10 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { FC } from 'react';
 
-interface Props {
-  children: ReactNode
-}
 
-const EmailCrainFirstPivot = ({ children = null }: Props)=>(
+
+const EmailCrainFirstPivot: FC = ({ children })=>(
   <>
     <polyline
       id="Fill-283"

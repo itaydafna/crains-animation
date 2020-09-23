@@ -1,12 +1,7 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
-import { AnimationProps, motion, Transition } from 'framer-motion';
+import React, { FC } from 'react';
 
-interface Props {
-  children: ReactNode
-}
 
-const AnalyticsCrainFirstPivot = ({ children  }:Props)=>(
+const AnalyticsCrainFirstPivot: FC = ({ children  })=>(
   <>
     <polyline
       id="Fill-283-2"

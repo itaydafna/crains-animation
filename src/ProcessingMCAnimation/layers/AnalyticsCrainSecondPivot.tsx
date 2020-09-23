@@ -1,11 +1,6 @@
-import React, { ReactNode } from  'react';
+import React, { FC } from  'react';
 
-
-interface Props {
-  children?: ReactNode
-}
-
-const AnalyticsCrainSecondPivot = ({  children  }:Props)=> (
+const AnalyticsCrainSecondPivot: FC = ({  children  })=> (
   <>
     <polyline
       id="Fill-281-2"
@@ -31,6 +26,8 @@ const AnalyticsCrainSecondPivot = ({  children  }:Props)=> (
     {children}
   </>
 );
+
+AnalyticsCrainSecondPivot.defaultProps = { children: null };
 
 
 
